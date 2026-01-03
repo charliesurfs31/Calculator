@@ -1,0 +1,29 @@
+.watch {
+    display: flex;
+    justify-content: center;
+}
+
+.watchFace {
+    height: 400px;
+    width: 350px;
+    background-color: #010000;
+}
+
+.topText {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+}
+
+.brandName {
+    color: #cecbc6;
+}
+
+.brandSpecs {
+    color: #50646e
+}
+
+.brandLogo {
+    color: #e8ce4f
+}
