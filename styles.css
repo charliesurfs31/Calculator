@@ -97,11 +97,12 @@
 }
 
 .frontButtons button {
+    font-weight: bold;
     color: #cecbc6;
     height: 50px;
     width: 84px;
     font-family: Michroma Regular;
-    background-color: #302d28;
+    background-color: transparent;
     font-size: larger;
     border-radius: 5px;
     margin: 0;
