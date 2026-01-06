@@ -53,6 +53,7 @@
     font-family: Michroma Regular;
     font-size: 20px;
     padding-right: 15px;
+    margin-top: 7px;
 }
 
 .brandSpecs {
@@ -93,4 +94,20 @@
     background-color: #191919;
     margin: 1px;
     clip-path: polygon(22.5% 100%, 77.5% 100%, 80% 0%, 20% 0%);
+}
+
+.frontButtons button {
+    color: #cecbc6;
+    height: 50px;
+    width: 84px;
+    font-family: Michroma Regular;
+    background-color: #302d28;
+    font-size: larger;
+    border-radius: 5px;
+    margin: 0;
+
+}
+
+.frontButtons {
+    text-align: center;
 }
