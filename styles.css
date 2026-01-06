@@ -1,3 +1,9 @@
+@font-face {
+  font-family: 'Michroma Regular';
+  src: url(Michroma/Michroma-Regular.ttf) format('truetype');
+}
+
+
 .watch {
     display: flex;
     flex-direction: column;
@@ -6,24 +12,24 @@
     height: 100vh;
 }
 
-.topBand2 {
+.topBand1 {
     height: 75px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(22.5% 0%, 77.5% 0%, 80% 100%, 20% 100%);
 }
 
-.topBand3 {
+.topBand2 {
     height: 75px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(20% 0%, 80% 0%, 85% 100%, 15% 100%);
 }
 
-.topBand4 {
+.topBand3 {
     height: 75px;
     width: 330px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(15% 0%, 85% 0, 100% 100%, 0 100%);
 }
@@ -39,40 +45,52 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 50px;
     padding-top: 10px;
 }
 
 .brandName {
     color: #cecbc6;
+    font-family: Michroma Regular;
+    font-size: 20px;
+    padding-right: 15px;
 }
 
 .brandSpecs {
-    color: #50646e
+    color: #50646e;
 }
 
 .brandLogo {
-    color: #e8ce4f
+    color: #e8ce4f;
+    font-size: 30px;
+    margin-left: 10px;
+    padding-left: 25px;
+}
+
+.screen {
+    height: 75px;
+    width: auto;
+    margin: 10px;
+    background-color: #c8dcda;
 }
 
 .bottomBand1 {
     height: 75px;
     width: 330px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(15% 100%, 85% 100%, 100% 0%, 0% 0%);
 }
 
 .bottomBand2 {
     height: 75px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(20% 100%, 80% 100%, 85% 0%, 15% 0%);
 }
 
 .bottomBand3 {
     height: 75px;
-    background-color: #010000;
+    background-color: #191919;
     margin: 1px;
     clip-path: polygon(22.5% 100%, 77.5% 100%, 80% 0%, 20% 0%);
 }
