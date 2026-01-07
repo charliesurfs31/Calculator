@@ -4,6 +4,8 @@ const sum = function(a, b) {
 }
 
 
-button.addEventListner('click', function) {
+const frontButtons = document.querySelector('0') {
+    .addEventListener('click', function) {
 
+    }
 }
