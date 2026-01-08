@@ -34,7 +34,7 @@ for (let i=0; i < numButtons.length; i++) {
         if((digit === '.') && (screen.textContent.includes('.'))) {
         }
         if(screen.textContent.length >= 9) {
-            
+
         }
         else{
         screen.innerHTML += digit;
@@ -50,19 +50,43 @@ for (let i=0; i < operButtons.length; i++) {
             const secondNumber = screen.textContent;
             if(operator === '+') {
                 const result = add(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
                 screen.textContent = result;
+                }
             }
             if(operator === '−') {
                 const result = subtract(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
                 screen.textContent = result;
+                }
             }
             if(operator === '×') {
                 const result = multiply(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
                 screen.textContent = result;
+                }
             }
             if(operator === '÷') {
                 const result = divide(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
                 screen.textContent = result;
+                }
             }
         }
         else {
