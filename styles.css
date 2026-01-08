@@ -3,6 +3,14 @@
   src: url(Michroma/Michroma-Regular.ttf) format('truetype');
 }
 
+<<<<<<< HEAD
+=======
+@font-face {
+    font-family: 'DS Digital';
+    src: url(ds_digital/DS-DIGI.TTF) format('truetype');
+}
+
+>>>>>>> working
 
 .watch {
     display: flex;
@@ -72,6 +80,12 @@
     width: auto;
     margin: 10px;
     background-color: #c8dcda;
+<<<<<<< HEAD
+=======
+    font-family: DS Digital;
+    font-size: 75px;
+    text-align: right;
+>>>>>>> working
 }
 
 .bottomBand1 {
