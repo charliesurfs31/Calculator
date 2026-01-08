@@ -31,9 +31,6 @@ for (let i=0; i < numButtons.length; i++) {
             screen.textContent = '';
             isSecondNumber = false;
         }
-<<<<<<< HEAD
-        screen.innerHTML += digit;
-=======
         if((digit === '.') && (screen.textContent.includes('.'))) {
         }
         if(screen.textContent.length >= 9) {
@@ -42,7 +39,6 @@ for (let i=0; i < numButtons.length; i++) {
         else{
         screen.innerHTML += digit;
         }
->>>>>>> working
     })
 }
 
@@ -54,21 +50,6 @@ for (let i=0; i < operButtons.length; i++) {
             const secondNumber = screen.textContent;
             if(operator === '+') {
                 const result = add(Number(firstNumber), Number(secondNumber));
-<<<<<<< HEAD
-                screen.textContent = result;
-            }
-            if(operator === '-') {
-                const result = subtract(Number(firstNumber), Number(secondNumber));
-                screen.textContent = result;
-            }
-            if(operator === '×') {
-                const result = multiply(Number(firstNumber), Number(secondNumber));
-                screen.textContent = result;
-            }
-            if(operator === '÷') {
-                const result = divide(Number(firstNumber), Number(secondNumber));
-                screen.textContent = result;
-=======
                 if((result.toString().length >= 9) && (result.toString().includes('.'))) {
                     const charsBeforeDecimal = result.toString().indexOf('.');
                     screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
@@ -106,7 +87,6 @@ for (let i=0; i < operButtons.length; i++) {
                 else {
                 screen.textContent = result;
                 }
->>>>>>> working
             }
         }
         else {
