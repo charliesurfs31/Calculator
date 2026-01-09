@@ -25,7 +25,7 @@ function divide(a, b) {
   function operate(operator, num1, num2) {
     const screen = document.querySelector('.screen');
     if((operator === '÷') && (num2 === 0)) {
-        screen.textContent = 'Really?'
+        return String('Really?');
     }
     else if(operator === '+') {
         return add(num1, num2)
@@ -69,9 +69,13 @@ for (let i=0; i < operButtons.length; i++) {
         const screen = document.querySelector('.screen');
         const secondNumber = screen.textContent;
         if(operButtons[i].textContent === '=') {
-            if((firstNumber !== '') && (operator != '') && (secondNumber !== '') && (isSecondNumber === false))  {
+            if((firstNumber !== '') && (operator !== '') && (secondNumber !== '') && (isSecondNumber === false))  {
                 const result = operate(operator, Number(firstNumber), Number(secondNumber));
-                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                if(typeof result === 'string') {
+                    screen.textContent = result;
+                    return;
+                }                
+                else if((result.toString().length >= 9) && (result.toString().includes('.'))) {
                     const charsBeforeDecimal = result.toString().indexOf('.');
                     screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1)
                 }
@@ -83,7 +87,11 @@ for (let i=0; i < operButtons.length; i++) {
         else {
             if ((firstNumber !== '') && (operator !== '') && (isSecondNumber === false)) {
             const result = operate(operator, Number(firstNumber), Number(secondNumber));
-                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                if(typeof result === 'string') {
+                    screen.textContent = result;
+                    return;
+                }
+                else if((result.toString().length >= 9) && (result.toString().includes('.'))) {
                     const charsBeforeDecimal = result.toString().indexOf('.');
                     screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1)
                 }
@@ -138,7 +146,11 @@ document.addEventListener("keydown", (event) => {
         if ((firstNumber !== '') && (operator !== '') && (isSecondNumber === false)) {
         const secondNumber = screen.textContent;
         const result = operate(operator, Number(firstNumber), Number(secondNumber));
-            if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+            if(typeof result === 'string') {
+                screen.textContent = result;
+                return;
+            }            
+            else if((result.toString().length >= 9) && (result.toString().includes('.'))) {
                 const charsBeforeDecimal = result.toString().indexOf('.');
                 screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1)
             }
@@ -152,9 +164,13 @@ document.addEventListener("keydown", (event) => {
   }
   else if((event.key === '=') || (event.key === 'Enter')) {
     const secondNumber = screen.textContent;
-    if((firstNumber !== '') && (operator != '') && (secondNumber !== '') && (isSecondNumber === false))  {
+    if((firstNumber !== '') && (operator !== '') && (secondNumber !== '') && (isSecondNumber === false))  {
         const result = operate(operator, Number(firstNumber), Number(secondNumber));
-        if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+        if(typeof result === 'string') {
+            screen.textContent = result;
+            return;
+        }       
+        else if((result.toString().length >= 9) && (result.toString().includes('.'))) {
             const charsBeforeDecimal = result.toString().indexOf('.');
             screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1)
         }
