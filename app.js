@@ -33,7 +33,7 @@ for (let i=0; i < numButtons.length; i++) {
         }
         if((digit === '.') && (screen.textContent.includes('.'))) {
         }
-        if(screen.textContent.length >= 9) {
+        else if(screen.textContent.length >= 9) {
 
         }
         else{
@@ -98,3 +98,97 @@ for (let i=0; i < operButtons.length; i++) {
         }
     )
 }
+
+const clearButton = document.querySelector('#clear');
+clearButton.addEventListener('click', function() {
+    firstNumber = '';
+    operator = '';
+    isSecondNumber = false;
+    const screen = document.querySelector('.screen');
+    screen.textContent = '';
+});
+
+/* Keyboard Compatibility */
+
+document.addEventListener("keydown", (event) => {
+
+  if((event.key >= 0) && (event.key <= 9)) {
+    const digit = event.key;
+        const screen = document.querySelector('.screen');
+        if(isSecondNumber) {
+            screen.textContent = '';
+            isSecondNumber = false;
+        }
+        if((digit === '.') && (screen.textContent.includes('.'))) {
+        }
+        else if(screen.textContent.length >= 9) {
+
+        }
+        else{
+        screen.innerHTML += digit;
+        }
+  }
+  else if((event.key === '+') || (event.key === '-') || (event.key === '/') || event.key === '*') {
+        const screen = document.querySelector('.screen');
+        let operatorSymbol = event.key;
+        if (event.key === '*') {
+            operatorSymbol = '×';
+        } else if (event.key === '/') {
+            operatorSymbol = '÷';
+        } else if (event.key === '-') {
+            operatorSymbol = '−'
+        }
+        firstNumber = screen.textContent;
+        operator = operatorSymbol;
+        isSecondNumber = true;
+  }
+  else if((event.key === '=') || (event.key === 'Enter')) {
+    const screen = document.querySelector('.screen');
+    const secondNumber = screen.textContent;
+                if(operator === '+') {
+                const result = add(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
+                screen.textContent = result;
+                }
+            }
+            if(operator === '−') {
+                const result = subtract(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
+                screen.textContent = result;
+                }
+            }
+            if(operator === '×') {
+                const result = multiply(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
+                screen.textContent = result;
+                }
+            }
+            if(operator === '÷') {
+                const result = divide(Number(firstNumber), Number(secondNumber));
+                if((result.toString().length >= 9) && (result.toString().includes('.'))) {
+                    const charsBeforeDecimal = result.toString().indexOf('.');
+                    screen.textContent = result.toFixed(9 - charsBeforeDecimal - 1);
+                }
+                else {
+                screen.textContent = result;
+                }
+            }
+        }
+
+    else if(event.key === '.') {
+        
+    }
+
+  });

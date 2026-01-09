@@ -40,6 +40,7 @@
 }
 
 .watchFace {
+    position: relative;
     height: 400px;
     width: 350px;
     background-color: #010000;
@@ -81,6 +82,25 @@
     font-size: 75px;
     text-align: right;
 }
+
+.clearButton button {
+    position: absolute;
+    right: 520px;
+    top: 350px;
+    height: 40px;
+    width: 25px;
+    background-color: lightgrey;
+    border-color: gray;
+    padding: 0;
+
+}
+
+.clearButton:active button {
+    width: 15px;
+    right: 530px;
+    text-align: center;
+}
+
 
 .bottomBand1 {
     height: 75px;
